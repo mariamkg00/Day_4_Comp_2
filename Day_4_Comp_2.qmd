@@ -7,3 +7,55 @@ editor: visual
 ## 
 
 #added a change
+
+```{r}
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+
+# if you don't have all these packages use install.packages
+library(tidyverse)
+```
+
+## Basic Data Exploration
+
+-   names: get variable names
+
+-   dim: get data dimensions (rows by columns
+
+-   head: get first n lines (6 by default)
+
+-   tail: get last n lines (6 by default)
+
+-   summary: get basic summary statistics
+
+```{r}
+names(penguins)
+
+dim(penguins)
+
+head(penguins)
+
+tail(penguins)
+
+
+#a bunch of summary statistics all at once, for each variable in the data, it gives you statistics, but it doesn't show us anything about relationships. 
+
+summary(penguins)
+
+#doesn't allow us to explore relationships
+```
+
+```{r}
+skim(penguins)
+
+#gives me number of missings, percent of completeness, SD, and percentiles and a histogram. 
+```
+
+We might want to look at statistics visually.
+
+```{r}
+ggpairs(penguins)
+
+#a grid data typese to show relationships between variables among cross groups 
+```
