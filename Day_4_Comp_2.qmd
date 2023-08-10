@@ -2,6 +2,8 @@
 title: "Day 4 Comp Session 2"
 format: html
 editor: visual
+execute: 
+  warning: FALSE
 ---
 
 ## 
@@ -58,4 +60,27 @@ We might want to look at statistics visually.
 ggpairs(penguins)
 
 #a grid data typese to show relationships between variables among cross groups 
+```
+
+We want to practice our data visualization
+
+## Making more exploratory charts in ggplot2
+
+A\) Histogram
+
+How many variables? one. it's a one variable chart
+
+```{r}
+#needs three things, ggplot, what data and variables are, what type of geom im using (chart); color is outline 
+
+ggplot(data=penguins, aes(x= flipper_length_mm))+
+  geom_histogram (fill = "blue", aes(color= species) )+
+  theme_minimal()
+```
+
+```{r}
+ggplot(data =penguins, aes(x= species, y= bill_length_mm))+
+  geom_boxplot(fill = 'yellow', aes(color= island))+
+  geom_jitter(  alpha= 0.5, aes(size = bill_depth_mm, fill = bill_depth_mm))+
+  theme_dark()
 ```
